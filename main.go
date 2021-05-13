@@ -36,7 +36,7 @@ func main() {
 		panic(err)
 	}
 	// 订阅消息
-	if err := rdbServiceInstance.Subscribe("canal_demo_test\\..*"); err != nil {
+	if err := rdbServiceInstance.Subscribe(config.Env.Canal.Subscribe); err != nil {
 		panic(err)
 	}
 	// 读取binlog消息

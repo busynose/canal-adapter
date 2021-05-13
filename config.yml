@@ -2,21 +2,21 @@
 mysql:
   host: 127.0.0.1             # 目标数据库地址
   port: 3306                  # 目标数据库端口
-  dbName: canal_demo_test     # 目标数据库名称
+  dbname: canal_demo_test     # 目标数据库名称
   user: root                  # 目标数据库用户
   pwd:  123                   # 目标数据库密码
   charset:  utf8mb4           # 目标数据库编码
 
 ## 数据源
 canal:
-  isDebugEnable: true             # 是否开启debug模式，打印DML和DDL
+  isdebugenable: true             # 是否开启debug模式，打印DML和DDL
   address: 172.16.50.207          # canal服务地址
   port: 11111                     # canal服务端口
-  userName: canal                 # canal服务的账号
+  username: canal                 # canal服务的账号
   password: canal                 # canal服务密码
   destination: canal_demo_test    # 订阅实例instance名称
-  soTimeOut: 60000                # 读取超时
-  idleTimeOut: 3600000            # 连接超时
+  sotimeout: 60000                # 读取超时
+  idletimeout: 3600000            # 连接超时
   subscribe: canal_demo_test\\..* # 订阅规则
 
 # 多个正则之间以逗号(,)分隔，转义符需要双斜杠(\\)

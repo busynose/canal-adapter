@@ -20,14 +20,15 @@ type Config struct {
 	}
 
 	Canal struct {
-		IsDebugEnable bool   `default:"true"`            // 是否开启debug模式，打印DML和DDL
-		Address       string `default:"172.16.50.207"`   // canal-server的host
-		Port          int    `default:"11111"`           // canal-server的端口
-		UserName      string `default:"canal"`           // canal-server的用户名
-		Password      string `default:"canal"`           // canal-server的密码
-		Destination   string `default:"canal_demo_test"` // instance的名称
-		SoTimeOut     int32  `default:"60000"`           // 读取超时
-		IdleTimeOut   int32  `default:"3600000"`         // 连接超时
+		IsDebugEnable bool   `default:"true"`                 // 是否开启debug模式，打印DML和DDL
+		Address       string `default:"172.16.50.207"`        // canal-server的host
+		Port          int    `default:"11111"`                // canal-server的端口
+		UserName      string `default:"canal"`                // canal-server的用户名
+		Password      string `default:"canal"`                // canal-server的密码
+		Destination   string `default:"canal_demo_test"`      // instance的名称
+		SoTimeOut     int32  `default:"60000"`                // 读取超时
+		IdleTimeOut   int32  `default:"3600000"`              // 连接超时
+		Subscribe     string `default:"canal_demo_test\\..*"` // 订阅的正则
 	}
 }
 
