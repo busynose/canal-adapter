@@ -14,10 +14,10 @@ canal:
   port: 11111                     # canal服务端口
   username: canal                 # canal服务的账号
   password: canal                 # canal服务密码
-  destination: canal_demo_test    # 订阅实例instance名称
+  destination: jira_sync    # 订阅实例instance名称
   sotimeout: 60000                # 读取超时
   idletimeout: 3600000            # 连接超时
-  subscribe: canal_demo_test\\..* # 订阅规则
+  subscribe: jira.*     # 订阅规则
 
 # 多个正则之间以逗号(,)分隔，转义符需要双斜杠(\\)
 # 常见例子：
@@ -26,3 +26,5 @@ canal:
 # 3.  canal下的以canal打头的表：canal\\.canal.*
 # 4.  canal schema下的一张表：canal\\.test1
 # 5.  多个规则组合使用：canal\\..*,mysql.test1,mysql.test2 (逗号分隔)
+
+ 

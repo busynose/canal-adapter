@@ -1,6 +1,7 @@
 package config
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/jinzhu/configor"
@@ -36,5 +37,14 @@ func Init() {
 	if err := configor.Load(&Env, "config.yml"); err != nil {
 		panic(err)
 	}
-	fmt.Printf("config: %#v", Env)
+
+	printJson(Env)
+}
+
+func printJson(i interface{}) {
+	out, err := json.Marshal(i)
+	if err != nil {
+		return
+	}
+	fmt.Println(string(out))
 }
